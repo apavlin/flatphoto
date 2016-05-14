@@ -27,7 +27,7 @@ var paths = {
 
     scss: {
         location: [
-            'dev/scss/**/*.scss'
+            'dev/scss/main.scss'
         ],
         destination: 'prod/css'
     },
@@ -59,7 +59,7 @@ gulp.task('sass-compile', function() {
     .pipe(plumber({errorHandler: notify.onError("Sass: <%= error.message %>")}))
 		.pipe(sourcemaps.init())
 		.pipe(sass.sync().on('error', sass.logError))
-		.pipe(sass({outputStyle: 'compressed'}))
+		.pipe(sass({outputStyle: 'extended'}))
 		.pipe(autoprefixer(['> 5%', 'last 5 versions', 'IE 9']))
 		.pipe(concat("main.min.css"))
 		.pipe(sourcemaps.write())
@@ -74,7 +74,7 @@ gulp.task('concat-js', function() {
     .pipe(eslint())
     .pipe(eslint.format())
     .pipe(sourcemaps.init())
-    .pipe(uglify())
+    // .pipe(uglify())
     .pipe(concat('main.min.js'))
     .pipe(rigger())
   	.pipe(sourcemaps.write())
@@ -124,7 +124,7 @@ gulp.task('server', function () {
 // Слежка
 gulp.task('watch', function () {
   gulp.watch('dev/jade/**/*', ['jade-compile']);
-  gulp.watch(paths.scss.location, ['sass-compile']);
+  gulp.watch('dev/scss/**/*', ['sass-compile']);
   gulp.watch('dev/img/**/*', ['img-min']);
   gulp.watch('dev/js/**/*', ['concat-js']);
   gulp.watch(['prod/*.html', 'prod/js/*.js']).on('change', browserSync.reload);

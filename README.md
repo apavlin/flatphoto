@@ -1,6 +1,6 @@
 > Instructions
 
-This is my photo-portfolio site. 
+This is my portfolio site. 
 
 To install this project:
 

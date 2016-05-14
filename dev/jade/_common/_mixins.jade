@@ -1,7 +1,15 @@
-mixin nav(className, items, activeIndex)
-	nav(class=className)
-		.container
-			ul(class="#{className}__list")
-				each item, index in items
-					li(class="#{className}__item" + ((activeIndex == index) ? "_active" : ''))
-						a(href="#" class="#{className}__link")= item
+mixin flatItem(flat)
+    .flat__item
+        .flat__text
+            .flat__number= flat.number
+            .flat__description= flat.descr
+        .flat__title= flat.title
+
+        .flat__photos
+            .grid-sizer
+            .gallery(itemscope='', itemtype='http://schema.org/ImageGallery')
+                each item in flat.images
+                    //- .grid-sizer
+                    figure(itemprop='associatedMedia', itemscope='', itemtype='http://schema.org/ImageObject').gallery__box
+                        a(href='img/flats/#{item}', itemprop='contentUrl', data-size="#{flat.imagesize}").gallery__link
+                            img(src='img/flats/thumbnails/#{item}', itemprop='thumbnail', alt='Image description').gallery__img
