@@ -1,0 +1,204 @@
+.header {
+  display: flex;
+  // margin: 0 15%;
+    flex-wrap: wrap;
+
+  justify-content: space-around;
+  align-items: center;
+  font-family: 'SegoeUILight';
+  font-weight: 300;
+  border-bottom: 1.5px solid orange;
+  margin-bottom: 40px;
+  padding: 10px 0;
+   @include mediaMaxWidth(500px) {
+       // flex-direction: column;
+      }
+}
+
+.contacts {
+  &__box {
+
+  }
+    // font-family: "tuffyregular";
+    // width: 70%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+        margin-top: 5px;
+     @include mediaMaxWidth(500px) {
+      }
+    // animation-delay: 0.5s;
+    // animation-duration: 1s;
+
+
+    &__item {
+        display:flex;
+        // justify-content: flex-start;
+        // margin: 10px 0 10px;
+        margin: 5px;
+        // border-radius: 50%;
+
+    }
+    &__link {
+        padding: 0;
+        cursor: pointer;
+        color: black;
+        // font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease;
+        height: 38px;
+        width: 38px;
+        font-size: 0.8rem;
+                position: relative;
+
+                &:hover {
+            transform: translateY(5px);
+
+        }
+        &_tel {
+                &:hover {
+                  &:before {
+                    width: 200px;
+                      content: '+7-983-211-9635 (+whatsapp)';
+                      position: absolute;
+                      color: #777;
+                      top: -23px;
+                      left: 35px;
+                  }
+                }
+        }
+
+        &_vk {
+        }
+        &_skype {
+            &:hover {
+              &:before {
+                content: 'skype:photo@bypablo.ru';
+                position: absolute;
+                color: #777;
+                top: -23px;
+                left: -50px;
+              }
+            }
+        }
+        &_fb {
+          padding-bottom: 4px;
+        }
+
+        &_email {
+          padding-bottom: 4px;
+             &:hover {
+              &:before {
+                content: 'photo@bypablo.ru';
+                position: absolute;
+                color: #777;
+                top: -23px;
+                left: -125px;
+              }
+            }
+        }
+    }
+}
+
+.colorSwither {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  // align-items: flex-end;
+  text-align: center;
+  font-size: 0.85rem;
+  width: 125px;
+    @include mediaMaxWidth(700px) {
+      // width: auto;
+      // order: -1;
+      // float: right;
+    }
+    @include mediaMaxWidth(555px) {
+      width: 135px;
+      order: -1;
+      // float: right;
+    }
+   &-white {
+    padding: 0 5px;
+    border-radius: 2px;
+      &:hover {
+        color: black;
+        background: white;
+      }
+   }
+   &-or {
+    padding: 0 2px;
+    cursor: default;
+   }
+   &-black {
+    border-radius: 2px;
+    padding: 0 5px;
+    transition: all 0.5s ease;
+      &:hover {
+        color: white;
+        background: rgb(30,30,30);
+      }
+   }
+}
+
+.en :lang(ru),
+.en :lang(es),
+.es :lang(ru),
+.es :lang(en),
+.ru :lang(en),
+.ru :lang(es) {
+    display: none;
+}
+
+.en *[lang=ru],
+.en *[lang=es],
+.ru *[lang=en],
+.ru *[lang=es],
+.es *[lang=ru],
+.es *[lang=en] {
+    display: none;
+}
+
+      /* Скрываем "не тот" язык */
+.en .ru .es, .en .es .ru, .es .ru .en, .es .en .ru,
+.ru .en .es, .ru .es .en {
+  display: none;
+}
+
+.language {
+  width: 125px;
+@include mediaMaxWidth(770px) {
+      // float: right;
+  // width: 105px;
+
+  order: -2;
+    }
+  }
+  /* Переключалки языка */
+.lang-switcher {
+
+  display: inline-flex;
+  // flex-direction: row;
+  font-family: 'SegoeUILight';
+  font-size: 0.9rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  // text-align: center;
+  width: 25px;
+
+}
+.lang-switcher:hover {
+  color: orange;
+}
+  /* Выделяем активную переключалку тоже с помощью классов родителя */
+.en .lang-switcher--en, .es .lang-switcher--es,
+.ru .lang-switcher--ru {
+  color: orange;
+  border-bottom: none;
+  font-weight: 600;
+  cursor: default;
+}
+
+

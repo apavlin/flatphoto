@@ -1,31 +1,65 @@
 extends ../main
 
-block content
-    .main
-        a(href="flats.html").main__item.main__item-photo
-            .main__itemTitle Фото
-            img(src="img/flats/thumbnails/flat1-4.jpg", alt="").main__itemContent
-            img(src="img/flats/thumbnails/flat2-4.jpg", alt="").main__itemContent
-            img(src="img/flats/thumbnails/flat3-4.jpg", alt="").main__itemContent
-            img(src="img/flats/thumbnails/flat4-4.jpg", alt="").main__itemContent
-            img(src="img/flats/thumbnails/flat5-3.jpg", alt="").main__itemContent
+block flat
+  .wrapper
+    include ../_common/_header.jade
+    //- .upbutton
+      a(href="#header").upbutton__link &#9650;
+    .aboutme
+        .aboutme__logo
+            img(src="../img/logo-white.png", alt="Logo").logo#logo
+
+        .aboutme__text.es(lang='es')
+            | Me llamo Pavel y soy un fotógrafo profesional de los bienes raíces.  Yo probé los diferentes géneros en la fotografía.  Y esto me ayudó encontrar lo que sé hacer mejor.  La toma de fotografías  de los interiores y objetos de los bienes raíces, que podría parecer  simple, requiere la observación de una serie de normas y reglas, uso del equipo especial, modo particular de enfocar el trabajo con la luz y  conocimiento de los detalles del trabajo con óptica gran angular. ¡Solamente tomando en cuenta una gran cantidad de los factores aparentemente insignificantes se puede lograr  excelente resultado! A pesar de las decenas obras de alta calidad que yo hice sigo evolucionando y busco nuevas interesantes técnicas en la toma y procesamiento de las imágenes fotográficas. Yo vivo en Kemerovo  y estaría encantado de cooperar con ustedes.
+        .aboutme__text.aboutme__text-helpful.es(lang='es') He aquí como yo podría ser útil para ustedes:
+
+        .aboutme__text.ru(lang='ru')
+            | Меня зовут Павел и я профессиональный фотограф недвижимости. Я перепробовал разные жанры в фотографии. И это помогло найти то, что лучше всего у меня получается. Фотосъемка интерьеров и объектов недвижимости, при всей своей внешней простоте, требует соблюдения ряда норм и правил, специального оборудования, особого подхода в работе с освещением и знание тонкостей работы с широкоугольной оптикой. Только с учетом большого количества мелких факторов можно прийти к отличному результату! Несмотря на десятки качественно сделанных работ за плечами, я постоянно развиваюсь и ищу новые интересные приемы в съемке и обработке фотографий. Я живу в Кемерово и буду рад сотрудничать с вами.
+        .aboutme__text.aboutme__text-helpful.ru(lang='ru') Вот чем я могу быть вам полезен:
+
+        .aboutme__text.en(lang='en')
+            | My name is Pavel and I am a professional real estate photographer. I have tried different genres in photography, and that has helped me to find what I can do the best. Taking pictures of interiors and houses, seem simple, but actually requires many things such as the compliance with a number of rules and regulations, special equipment, a particular approach in working with light and knowledge of nuances of wide-angle optics. Only taking into account a large number of small factors, one can lead to a great result! In spite of dozens well done works, I am constantly evolving and looking for new interesting techniques in photography and postprocessing. I live in Kemerovo and will be happy to cooperate with you.
+        .aboutme__text.aboutme__text-helpful.en(lang='en') Here what I can do for you:
 
 
 
-        a(href="").main__item.main__item-video
-            .main__itemTitle Видео
-            img(src="img/video/thumbnails/video1.jpg", alt="").main__itemContent
-            img(src="img/video/thumbnails/video4.jpg", alt="").main__itemContent
-            img(src="img/video/thumbnails/video3.jpg", alt="").main__itemContent
-            img(src="img/video/thumbnails/video2.jpg", alt="").main__itemContent
-            img(src="img/video/thumbnails/video5.jpg", alt="").main__itemContent
+    .flat
+      include ../flats-content
+      for flat in flatList
+          +flatItem(flat)
 
 
-        a(href="").main__item.main__item-web
-            .main__itemTitle Web
-            img(src="img/web/thumbnails/web1.jpg", alt="").main__itemContent
-            img(src="img/web/thumbnails/web2.jpg", alt="").main__itemContent
-            img(src="img/web/thumbnails/web3.jpg", alt="").main__itemContent
-            img(src="img/web/thumbnails/web4.jpg", alt="").main__itemContent
-            img(src="img/web/thumbnails/web5.jpg", alt="").main__itemContent
-            img(src="img/web/thumbnails/web1.jpg", alt="").main__itemContent
+    .pswp(tabindex='-1', role='dialog', aria-hidden='true')
+          .pswp__bg
+          .pswp__scroll-wrap
+            .pswp__container
+              .pswp__item
+              .pswp__item
+              .pswp__item
+            .pswp__ui.pswp__ui--hidden
+              .pswp__top-bar
+                .pswp__counter
+                button.pswp__button.pswp__button--close(title='Close (Esc)')
+                button.pswp__button.pswp__button--share(title='Share')
+                button.pswp__button.pswp__button--fs(title='Toggle fullscreen')
+                button.pswp__button.pswp__button--zoom(title='Zoom in/out')
+                .pswp__preloader
+                  .pswp__preloader__icn
+                    .pswp__preloader__cut
+                      .pswp__preloader__donut
+              .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+                .pswp__share-tooltip
+              button.pswp__button.pswp__button--arrow--left(title='Previous (arrow left)')
+              button.pswp__button.pswp__button--arrow--right(title='Next (arrow right)')
+              .pswp__caption
+                .pswp__caption__center
+
+    .contactme.es(lang='es') ¿Te gusta?
+        a.contactme__link.es(lang='es', href="#header") ¡Contáctame!
+        //- span.contactme__text.es(lang='es')  me!
+    .contactme.en(lang='en') Like it?
+        a.contactme__link.en(lang='en', href="#header") Contact
+        span.contactme__text.en(lang='en')  me!
+    .contactme.ru(lang='ru') Понравилось?
+        a.contactme__link.ru(lang='ru', href="#header") Свяжитесь
+        span.contactme__text.ru(lang='ru')  со мной!

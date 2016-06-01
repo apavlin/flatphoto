@@ -2,14 +2,17 @@ mixin flatItem(flat)
     .flat__item
         .flat__text
             .flat__number= flat.number
-            .flat__description= flat.descr
-        .flat__title= flat.title
+            .flat__description.en(lang='en')= flat.descriptionEN
+            .flat__description.es(lang='es')= flat.descriptionES
+            .flat__description.ru(lang='ru')= flat.descriptionRU
+        .flat__title.en(lang='en')= flat.titleEN
+        .flat__title.es(lang='es')= flat.titleES
+        .flat__title.ru(lang='ru')= flat.titleRU
 
         .flat__photos
             .grid-sizer
             .gallery(itemscope='', itemtype='http://schema.org/ImageGallery')
                 each item in flat.images
-                    //- .grid-sizer
                     figure(itemprop='associatedMedia', itemscope='', itemtype='http://schema.org/ImageObject').gallery__box
                         a(href='img/flats/#{item}', itemprop='contentUrl', data-size="#{flat.imagesize}").gallery__link
-                            img(src='img/flats/thumbnails/#{item}', itemprop='thumbnail', alt='Image description').gallery__img
+                            img(src='img/flats/thumbnails/#{item}', itemprop='thumbnail', alt='#{flat.titleEN}').gallery__img

@@ -1,35 +1,31 @@
 extends ../main
 
 block content
-    .slider-container
-        .slider-control.left.inactive
-        .slider-control.right
-        ul.slider-pagi
-        .slider
-            .slide.slide-0.active
-                .slide__bg
-                    .slide__text
-                        h2.slide__text-heading Однокомнатная квартира
-                        //- p.slide__text-desc
-                        //-     | Flat designed in warm shades with big living room and bright kitchen.
-                        a.slide__text-link(href="flats.html") Все фото
-            .slide.slide-1
-                .slide__bg
-                    .slide__text
-                        h2.slide__text-heading Двухкомнатная квартира
-                        a.slide__text-link(href="flats.html") Все фото
-            .slide.slide-2
-                .slide__bg
-                    .slide__text
-                        h2.slide__text-heading Однокомнатная студия
-                        a.slide__text-link(href="flats.html") Все фото
-            .slide.slide-3
-                .slide__bg
-                    .slide__text
-                        h2.slide__text-heading Однокомнатная студия
-                        a.slide__text-link(href="flats.html") Все фото
-            .slide.slide-4
-                .slide__bg
-                    .slide__text
-                        h2.slide__text-heading Двухкомнатная квартира
-                        a.slide__text-link(href="flats.html") Все фото
+    .main
+        a(href="flats.html").main__item.main__item-photo
+            .main__itemTitle Фото
+            img(src="img/flats/thumbnails/flat1-4.jpg", alt="").main__itemContent
+            img(src="img/flats/thumbnails/flat2-4.jpg", alt="").main__itemContent
+            img(src="img/flats/thumbnails/flat3-4.jpg", alt="").main__itemContent
+            img(src="img/flats/thumbnails/flat4-4.jpg", alt="").main__itemContent
+            img(src="img/flats/thumbnails/flat5-3.jpg", alt="").main__itemContent
+
+
+
+        a(href="").main__item.main__item-video
+            .main__itemTitle Видео
+            img(src="img/video/thumbnails/video1.jpg", alt="").main__itemContent
+            img(src="img/video/thumbnails/video4.jpg", alt="").main__itemContent
+            img(src="img/video/thumbnails/video3.jpg", alt="").main__itemContent
+            img(src="img/video/thumbnails/video2.jpg", alt="").main__itemContent
+            img(src="img/video/thumbnails/video5.jpg", alt="").main__itemContent
+
+
+        a(href="").main__item.main__item-web
+            .main__itemTitle Web
+            img(src="img/web/thumbnails/web1.jpg", alt="").main__itemContent
+            img(src="img/web/thumbnails/web2.jpg", alt="").main__itemContent
+            img(src="img/web/thumbnails/web3.jpg", alt="").main__itemContent
+            img(src="img/web/thumbnails/web4.jpg", alt="").main__itemContent
+            img(src="img/web/thumbnails/web5.jpg", alt="").main__itemContent
+            img(src="img/web/thumbnails/web1.jpg", alt="").main__itemContent

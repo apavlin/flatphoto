@@ -5,7 +5,7 @@
 }
 
 .main {
-  font-family: 'SegoeUILight';
+  font-family: 'ralewaymedium';
   position: relative;
   height: 100%;
   padding: 20px 0;
@@ -14,15 +14,42 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+   &__number {
+        font-size: 1.5rem;
+        color: rgba(0,0,0,0.3);
+        position: relative;
+        transition: all 0.4s ease;
+        margin-left: -40px;
+        &:after {
+            content: '';
+            position: absolute;
+            left:0;
+            bottom: 0;
+            height: 2px;
+            width: 75px;
+            border-radius: 10px;
+            background: orange;
+            transform: rotate(135deg);
+            transition: all 0.4s ease;
+        }
+
+    }
 
   &__itemTitle {
-    margin: auto -80px auto 30px;
+    margin: 30px -80px auto 30px;
     font-size: 1.5rem;
+    // font-weight: bold;
+    text-align: left;
+        // margin: -10px 0 30px 10px;
+        // vertical-align: bottom;
+        // padding-top: 15px;
     position: relative;
+    transition: all 0.4s ease;
+
       @include mediaMaxWidth(500px) {
-        transform: rotate(90deg);
-        margin: auto 0;
+
       }
+
       &:after {
         content: "";
         display: block;
@@ -30,93 +57,63 @@
         bottom: 0;
         left: 0;
         background: orange;
-        height: 1px;
+        height: 2px;
+        border-radius: 3px;
         width: 0%;
         transition:0.5s ease-in-out;
+        transition-delay: 0.5s;
       }
+
   }
   &__item {
     display: flex;
-    flex-direction: row-reverse;
+    // background:rgba(0,0,0,0.05);
+    margin: 0 10%;
+    // flex-direction: row-reverse;
     color:black;
-    height: 25%;
-    border-radius: 2px 20px 20px 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    text-align: right;
-    transform: translateX(-20%);
+    // height: 25%;
+    // border-radius: 2px 20px 20px 2px;
+    // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    // text-align: right;
+    // transform: translateX(-20%);
     transition: all 1s ease;
     font-size: 22px;
       @include mediaMaxWidth(500px) {
         transform: translateX(0%);
       }
       &:hover {
-        transform: translateX(-10%);
-          // .main__itemContent {
-          //   visibility: visible;
-          // }
-          .main__itemTitle {
+        .main__itemTitle {
+          transform: translateX(10px);
             &:after {
-              width: 100%;
-
+              width: 400%;
             }
-          }
-      }
+          .main__number {
+                transform: translate(-10px) ;
+                color:black;
+                    &:after {
+                        left: 10px;
+                        // bottom: -10px;
+                        transform: rotate(90deg);
+                    }
+                }
 
-      &-photo {
-        background-color: rgba(255, 170, 0, 0.35);
-      }
-      &-video {
-        background-color: rgba(247, 125, 12, 0.35);
-        transform: translateX(20%);
-        @include mediaMaxWidth(500px) {
-        transform: translateX(0);
-
-      }
-        // background-color: rgba(247, 125, 12, 0.20);
-        border-radius: 20px 0 0 20px;
-         flex-direction: row;
-
-          &:hover {
-            transform: translateX(10%);
-          }
-          .main__itemTitle{
-            transform: rotate(-90deg);
-            margin: auto 0 auto -80px;
-          }
-          .main__itemContent {
-           &:nth-child(2) {
-            // border-radius: 20px 2px 2px 20px;
-            margin-left: 40px;
-           }
-          }
-      }
-      &-web {
-        background-color: rgba(225, 204, 174, 0.35);
+        }
       }
   }
-  &__itemContent {
-    height: 90%;
-    opacity: 0;
-    border-radius: 10px;
-    margin: auto;
-    // box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    transition: all 0.8s ease-in-out;
-    // transition: all 0.6s easy;
 
-
-    &:hover {
-      opacity: 1;
+    &-photo {
     }
 
-    // &:nth-child(2) {
-    //   border-radius: 2px 20px 20px 2px;
-    // }
-
-    @include mediaMaxWidth(500px) {
-       &:nth-child(5), &:nth-child(4), &:nth-child(6) {
-        display: none
-       }
+    &-video {
+      @include mediaMaxWidth(500px) {
+      }
+      &:hover {
+      }
+      .main__itemTitle{
+      }
     }
 
+    &-web {
+    }
   }
-}
+
