@@ -7,27 +7,14 @@
 
 $(document).ready(function() {
 
-$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat4-8.jpg"])').addClass('panorama100');
-$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat6-10.jpg"], .gallery__img[src="img/flats/thumbnails/flat1-2.jpg"], .gallery__img[src="img/flats/thumbnails/flat3-3.jpg"], .gallery__img[src="img/flats/thumbnails/flat7-12.jpg"])').addClass('panorama50');
-$('.gallery__link[href="img/flats/flat4-5.jpg"], .gallery__link[href="img/flats/flat5-8.jpg"], .gallery__link[href="img/flats/flat6-6.jpg"], .gallery__link[href="img/flats/flat6-7.jpg"], .gallery__link[href="img/flats/flat7-7.jpg"], .gallery__link[href="img/flats/flat7-11.jpg"]').attr("data-size", "1863x2500");
-$('.gallery__link[href="img/flats/flat4-8.jpg"]').attr("data-size", "3500x914");
+$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat4-8.jpg"],.gallery__img[src="img/flats/thumbnails/flat10-13.jpg"])').addClass('panorama100');
+$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat6-8.jpg"], .gallery__img[src="img/flats/thumbnails/flat1-2.jpg"], .gallery__img[src="img/flats/thumbnails/flat3-3.jpg"], .gallery__img[src="img/flats/thumbnails/flat7-12.jpg"], .gallery__img[src="img/flats/thumbnails/flat8-1.jpg"])').addClass('panorama50');
+$('.gallery__link[href="img/flats/flat6-6.jpg"],  .gallery__link[href="img/flats/flat7-11.jpg"], .gallery__link[href="img/flats/flat8-2.jpg"]').attr("data-size", "1920x2570");
+$('.gallery__link[href="img/flats/flat4-8.jpg"]').attr("data-size", "3000x1079");
+$('.gallery__link[href="img/flats/flat10-13.jpg"]').attr("data-size", "3000x867");
 
-$('.colorSwither-black').on('click', function() {
-    $('body').css({
-        'background':'rgb(30,30,30)',
-        'color': 'white'
-        });
-    $('.st0').css('stroke', 'white');
-    $('#logo').attr('src', '../img/logo-black.png');
-});
-$('.colorSwither-white').on('click', function() {
-    $('body').css({
-        'background':'white',
-        'color': 'black'
-        });
-    $('.st0').css('stroke', 'black');
-     $('#logo').attr('src', '../img/logo-white.png');
-});
+
+
 
 
 //Переход вверх (без добавления в адрес id)
@@ -36,19 +23,47 @@ $('.colorSwither-white').on('click', function() {
           var destination = $(elementClick).offset().top;
           $('html,body').scrollTop(destination);
           return false;
+
+
     });
 
+// Привлечение внимания при переходе в пункт "Связаться со мной"
+    $('.contactme__link').on('click', function() {
+
+        $('.contacts__link_vk').css({
+              'animation-name': 'downUp',
+              'animation-duration': '0.3s',
+              'animation-delay': '0.5s'});
+
+        $('.contacts__link_fb').css({
+              'animation-name': 'downUp',
+              'animation-duration': '0.3s',
+              'animation-delay': '0.8s'});
+
+        $('.contacts__link_tel').css({
+              'animation-name': 'downUp',
+              'animation-duration': '0.3s',
+              'animation-delay': '1.1s'});
+
+        $('.contacts__link_email').css({
+              'animation-name': 'downUp',
+              'animation-duration': '0.3s',
+              'animation-delay': '1.4s'});
+
+        $('.contacts__link_skype').css({
+              'animation-name': 'downUp',
+              'animation-duration': '0.3s',
+              'animation-delay': '1.7s'});
+    });
 
 // На touch-устройствах при нажатии срабатывает hover
 $(document).on("mouseup touchend", function(e) {
   $(document).off("mousemove touchmove");
 });
 
-
 // Плавное появление фотографий
 window.sr = ScrollReveal({ duration: 1500 });
 sr.reveal('.gallery__img');
-
 
 // Плотное расстановка блоков
 var $grid = $('.gallery').imagesLoaded( function() {
@@ -60,6 +75,23 @@ var $grid = $('.gallery').imagesLoaded( function() {
   });
 });
 
+//Переключение цвета
+$('.colorSwither-black').on('click', function() {
+    $('body').css({
+        'background':'rgb(30,30,30)',
+        'color': 'white'
+        });
+    $('.st0').css('stroke', 'white');
+    $('#logo').attr('src', 'img/logo-black.png');
+});
+$('.colorSwither-white').on('click', function() {
+    $('body').css({
+        'background':'white',
+        'color': 'black'
+        });
+    $('.st0').css('stroke', 'black');
+     $('#logo').attr('src', 'img/logo-white.png');
+});
 
 //Переключение языков
 var body = document.getElementsByTagName('body')[0];
@@ -142,7 +174,5 @@ var body = document.getElementsByTagName('body')[0];
           }
           return(setStr);
        };
-
-
 });
 

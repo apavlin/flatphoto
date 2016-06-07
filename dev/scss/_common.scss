@@ -1,14 +1,8 @@
 html, body {
-  // height: 100%;
   margin: 0;
   padding: 0;
-transition: all 0.3s ease;
-  // background:rgb(20,20,20);
-  // color: white;
-  // background-image: url('/img/light_wool.png');
-  // background-attachment: fixed;
+  transition: all 0.3s ease;
 }
-
 
 body, *, *:after,*:before{
   box-sizing: border-box;
@@ -17,19 +11,54 @@ body, *, *:after,*:before{
 
 }
 
-a{
+a {
     text-decoration: none;
 }
-
-
-// .wrapper {
-//   min-height: 100%;
-//   height: auto!important;
-//   position: relative;
-// }
 
 @mixin mediaMaxWidth($w) {
   @media (max-width: $w) {
     @content;
+  }
+}
+
+
+@keyframes swing {
+  15% {
+    -webkit-transform: translateX(5px);
+    transform: translateX(5px);
+  }
+  30% {
+    -webkit-transform: translateX(-5px);
+    transform: translateX(-5px);
+  }
+  50% {
+    -webkit-transform: translateX(3px);
+    transform: translateX(3px);
+  }
+  65% {
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
+  }
+  80% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes downUp {
+    50% {
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+  }
+
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
   }
 }
