@@ -17,33 +17,33 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-        @include mediaMaxWidth(500px) {
-            margin:0 10px;
-        }
-
+    @include mediaMaxWidth(500px) {
+        margin: 0 10px;
+    }
     &__logo {
         align-items: center;
         justify-content: center;
         width: 30%;
         margin-bottom: 40px;
         transition: all 0.4s ease;
-            @include mediaMaxWidth(770px) {
-                width: 60%;
-            }
-            @include mediaMaxWidth(500px) {
-               width: 80%;
-          }
+        @include mediaMaxWidth(770px) {
+            width: 60%;
+        }
+        @include mediaMaxWidth(500px) {
+            width: 80%;
+        }
     }
     &__text {
         width: 100%;
         text-align: justify;
         margin-bottom: 60px;
-            &-helpful {
-                font-family: 'SegoeUIRegular';
-                font-size: 1.4rem;
-            }
+        &-helpful {
+            font-family: 'SegoeUIRegular';
+            font-size: 1.4rem;
+        }
     }
 }
+
 
 .logo {
     width: 100%;

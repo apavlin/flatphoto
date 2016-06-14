@@ -88,6 +88,7 @@
 }
 
 .colorSwither {
+  user-select: none;
   cursor: pointer;
   display: flex;
   justify-content: flex-end;
@@ -157,6 +158,7 @@
 
   /* Переключатели языка */
 .lang-switcher {
+  user-select: none;
   display: inline-flex;
   font-family: 'SegoeUILight';
   font-size: 0.9rem;
