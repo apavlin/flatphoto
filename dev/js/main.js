@@ -7,12 +7,15 @@
 
 $(document).ready(function() {
 
-$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat4-8.jpg"],.gallery__img[src="img/flats/thumbnails/flat10-13.jpg"])').addClass('panorama100');
-$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat6-8.jpg"], .gallery__img[src="img/flats/thumbnails/flat1-2.jpg"], .gallery__img[src="img/flats/thumbnails/flat3-3.jpg"], .gallery__img[src="img/flats/thumbnails/flat8-1.jpg"])').addClass('panorama50');
-$('.gallery__link[href="img/flats/flat6-6.jpg"], .gallery__link[href="img/flats/flat8-2.jpg"]').attr("data-size", "1920x2570");
-$('.gallery__link[href="img/flats/flat7-7.jpg"], .gallery__link[href="img/flats/flat7-8.jpg"], .gallery__link[href="img/flats/flat7-9.jpg"]' ).attr("data-size", "1920x2880");
+$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat4-8.jpg"], .gallery__img[src="img/flats/thumbnails/BilboaAtico10.jpg"], .gallery__img[src="img/flats/thumbnails/flat10-13.jpg"])').addClass('panorama100');
+$('.gallery__box:has(.gallery__img[src="img/flats/thumbnails/flat6-8.jpg"], .gallery__img[src="img/flats/thumbnails/flat1-2.jpg"], .gallery__img[src="img/flats/thumbnails/sants12.jpg"],  .gallery__img[src="img/flats/thumbnails/flat8-1.jpg"])').addClass('panorama50');
+$('.gallery__link[href="img/flats/flat6-6.jpg"],  .gallery__link[href="img/flats/flat8-2.jpg"]').attr("data-size", "1920x2570");
+
+$('.gallery__link[href="img/flats/flat7-7.jpg"], .gallery__link[href="img/flats/flat7-8.jpg"], .gallery__link[href="img/flats/flat7-9.jpg"], .gallery__link[href="img/flats/redman10.jpg"], .gallery__link[href="img/flats/redman11.jpg"], .gallery__link[href="img/flats/redman12.jpg"]' ).attr("data-size", "1920x2880");
+
 $('.gallery__link[href="img/flats/flat4-8.jpg"]').attr("data-size", "3000x1079");
 $('.gallery__link[href="img/flats/flat10-13.jpg"]').attr("data-size", "3000x867");
+$('.gallery__link[href="img/flats/BilboaAtico10.jpg"]').attr("data-size", "3000x1063");
 
 
 
