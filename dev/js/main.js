@@ -66,7 +66,7 @@ $(document).on("mouseup touchend", function(e) {
 });
 
 // Плавное появление фотографий
-window.sr = ScrollReveal({ duration: 1500 });
+window.sr = ScrollReveal({ duration: 800 });
 sr.reveal('.gallery__img');
 
 // Плотное расстановка блоков
